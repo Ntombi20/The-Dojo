@@ -4,8 +4,8 @@ describe("Aging friends", function(){
 
     it('should return the oldest friends', function(done){
 
-        var Aging_friends = require("../The-Dojo");
-        var age = new Products('./files/age.txt');
+        var Aging_friends = require("../aging_friends");
+        var age = new Aging_friends('./files/age.txt');
         age.oldest(function(err, age){
           var expectedAge = [
               {
@@ -21,8 +21,8 @@ describe("Aging friends", function(){
 
     it('should return friends that are younger than Ellie', function(done) {
 
-      var Aging_friends = require("../The-Dojo");
-      var age = new Products('./files/age.txt');
+      var Aging_friends = require("../aging_friends");
+      var age = new Aging_friends('./files/age.txt');
       age.oldest(function(err, age){
         var expectedYoungAge = [
             {
