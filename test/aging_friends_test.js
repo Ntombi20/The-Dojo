@@ -2,6 +2,7 @@ var assert = require("assert");
 
 describe("Aging friends", function(){
 
+    
     it('should return the oldest friends', function(done){
 
         var Aging_friends = require("../aging_friends");
@@ -10,7 +11,7 @@ describe("Aging friends", function(){
           var expectedAge = [
               {
               "name" : "Oya",
-              "oldest_age" : 29
+              "age" : 29
               }
           ]
             assert.deepEqual(expectedAge, age);
@@ -23,7 +24,7 @@ describe("Aging friends", function(){
 
       var Aging_friends = require("../aging_friends");
       var age = new Aging_friends('./files/age.txt');
-      age.oldest(function(err, age){
+      age.younger(function(err, age){
         var expectedYoungAge = [
             {
             "name" : "Peter",

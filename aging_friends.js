@@ -1,23 +1,51 @@
 var fs = require('fs');
 
-  var ages = fs.readdir('./files/age.csv', 'utf8');
-  
-  var friends = "Xola is 23, Peter is 18, Oya is 29, Ellie is 20, Sive is 27".split(", ");
+var file = fs.readdirSync('./files');
 
-  var oldestList = [];
+file.forEach(function(file){
+  var friends = fs.readFileSync('./files/' + file, 'utf8' )
 
-  for (var i = 0; i < friends.length; i++) {
-      var string = friends[i].split(" is ");
+  var list = [];
+
+  var friend = friends.split(", ");
+
+    friend.forEach(function(newStr){
+      var string = newStr.split(" is ");
 
       var name = string[0];
       var age = Number(string[1]);
 
-    oldestList.push({
-      name: name,
-      age: age
+      list.push({
+        name: name,
+        age: age
+      });
     });
 
-   console.log(oldestList);
+  console.log(list);
+    //return list;
+});
+//
+// exports.aging_friends = function(friends) {
+//   var list = aging_friends(friends);
+//   console.log(list);
+//   //return list;
+// }
 
-    //return oldestList;
-    }
+
+var aging_friends = require('./aging---friends.js');
+
+//  = function(friends){
+//   var newList = aging_friends(friends);
+// console.log(newList);
+//
+  // var older = newList[0].age;
+  // var olderName = "";
+  //
+  // newList.forEach(function(yay){
+  //    if (yay.age < older ){
+  //           older = yay.age;
+  //           olderName = yay.name;
+  //     }
+  // });
+// //  console.log(olderName);
+// };
