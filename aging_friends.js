@@ -1,9 +1,11 @@
 var fs = require('fs');
 
-var file = fs.readdirSync('./files');
+module.exports = function(filePath){
 
-file.forEach(function(file){
-  var friends = fs.readFileSync('./files/' + file, 'utf8' )
+this.allFriends = function() {
+
+//file.forEach(function(file){
+  var friends = fs.readFileSync(filePath, 'utf8' )
 
   var list = [];
 
@@ -21,21 +23,24 @@ file.forEach(function(file){
       });
     });
 
-  console.log(list);
-    //return list;
-});
-//
-// exports.aging_friends = function(friends) {
-//   var list = aging_friends(friends);
-//   console.log(list);
-//   //return list;
+
+  return list;
+//});
+}
+};
+
+//allFriends();
+// exports.allFriends = function() {
+//   var list = allFriends();
+//   //console.log(list);
+//   return list;
 // }
 
+// function oldest(friends){
+// var old = require('./aging_friends.js');
+// var newList = old.aging_friends();
 
-var aging_friends = require('./aging---friends.js');
 
-//  = function(friends){
-//   var newList = aging_friends(friends);
 // console.log(newList);
 //
   // var older = newList[0].age;
@@ -48,4 +53,4 @@ var aging_friends = require('./aging---friends.js');
   //     }
   // });
 // //  console.log(olderName);
-// };
+//};
