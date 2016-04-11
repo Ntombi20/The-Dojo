@@ -32,18 +32,17 @@ this.allFriends = function() {
 this.oldest = function(list){
   var newList = list;
 
-  var oldest = {};
+  var older = newList[0].age;
+  var olderName = "";
 
   for (var list in newList){
-
-    if (newList.age > older) {
-      var older = newList.age;
-      var olderName = newList[list].name;
+    if (newList[list].age > older) {
+      older = newList[list].age;
+      olderName = newList[list].name;
 
     };
-       console.log(older);
   };
-
+  return olderName;
 }
 
 };

@@ -30,28 +30,7 @@ describe("Aging friends", function(){
       var Aging_friends = require("../aging_friends");
       var age = new Aging_friends('./files/age.txt');
         console.log("age");
-          // var expectedFriends = [
-          //     {
-          //     "name" : "Xola",
-          //     "age" : 23
-          //     },
-          //     {
-          //     "name" : "Peter",
-          //     "age" : 18
-          //     },
-          //     {
-          //     "name" : "Oya",
-          //     "age" : 29
-          //     },
-          //     {
-          //     "name" : "Ellie",
-          //     "age" : 20
-          //     },
-          //     {
-          //     "name" : "Sive",
-          //     "age" : 27
-          //     }
-          // ]
+
           var age_txt = age.allFriends();
           //console.log(age_txt);
             assert.deepEqual(expectedFriends, age_txt);
@@ -65,14 +44,14 @@ describe("Aging friends", function(){
         var Aging_friends = require("../aging_friends");
         var age = new Aging_friends('./files/age.txt');
 
-          var expectedAge =  {
-              "name" : "Oya",
-              "age" : 29
-              }
+          // var expectedAge =  {
+          //     "name" : "Oya",
+          //     "age" : 29
+          //     }
 
           var theOldest = age.oldest(expectedFriends);
 
-            assert.deepEqual(expectedAge, theOldest);
+            assert.equal("Oya", theOldest);
             done();
 
     });
