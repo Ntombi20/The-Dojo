@@ -45,4 +45,21 @@ this.oldest = function(list){
   return olderName;
 }
 
+
+// the youngest
+this.youngest = function(list){
+  var newListYoung = list;
+
+  var younger = newListYoung[0].age;
+  var youngerName = "";
+
+  for (var list in newListYoung){
+    if (newListYoung[list].age < younger) {
+      younger = newListYoung[list].age;
+      youngerName = newListYoung[list].name;
+
+    };
+  };
+  return youngerName;
+}
 };
