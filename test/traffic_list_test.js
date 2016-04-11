@@ -19,10 +19,10 @@ describe("Traffic light dash", function(){
           assert.deepEqual(expectedAllLights, dash);
           done();
 
-   });
+    });
 
 
-  it('should return how many lights were orange?', function(done){
+  it('should return red nd green lights', function(done){
 
     var Traffic_light = require("../traffic_light");
     var lights = new Traffic_light('./files/traffic.txt');
@@ -37,15 +37,29 @@ describe("Traffic light dash", function(){
           {
           "color" : "green",
           "number" : 2
-          },
-          {
-          "color" : "orange",
-          "number" : 4
           }
         ]
-          assert.deepEqual(expectedLights, dash1);
+          assert.deepEqual(expectedLights, dash);
           done();
 
    });
 
+
+   it('should return how many lights were orange?', function(done){
+
+     var Traffic_light = require("../traffic_light");
+     var lights = new Traffic_light('./files/traffic.txt');
+
+         var dash = light.yellow(traffic());
+
+         var expected = [
+           {
+           "color" : "yellow",
+           "number" : 4
+           }
+         ]
+           assert.equal(expected, dash);
+           done();
+
+   })
 });
