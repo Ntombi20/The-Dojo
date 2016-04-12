@@ -10,8 +10,7 @@ var traffic_light = fs.readFileSync(filePath, 'utf8' );
 var list = [];
 
 var journey = traffic_light
-  .replace("on my way to work. ", "")
-  .replace("On my way in 3 were red, 2 were green.", "")
+  .replace("on my way to work. On my way in 3 were red, 2 were green.", "")
   .split("There are ")
   .slice(1);
 
@@ -42,12 +41,10 @@ this.traffic = function(){
       .replace("There are 9 traffic lights on my way to work.", "")
       .split(",");
 
-
       var redGreen = [];
 
       journey.forEach(function(str) {
         var newStr = str.replace(".", "").replace("\n", "").split(" were ");
-      console.log(newStr);
         var number = Number(newStr[0]);
         var color = newStr[1];
 
@@ -56,11 +53,33 @@ this.traffic = function(){
           color: color
         })
       })
+         return redGreen;
 
-      return redGreen;
 
 }
 
+
+// now the yellow light
+this.yellow = function(redGreen, list){
+   var numGreenRed = redGreen[0].number + redGreen[1].number;
+   var numAll = list[0].number;
+
+   var yellow = numAll - numGreenRed;
+   console.log(yellow);
+   return yellow;
+//
+//   for (var list in numAll) {
+//     for (var redGreen in numGreenRed) {
+//       console.log(numAll[list[0].number]);
+//       //console.log(numGreenRed[redGreen]);
+//
+//     };
+//   };
+//   //   var newNum = note[redGreen];
+//   //
+//   //   console.log(note[redGreen[0].color]);
+//
+}
 
 
 };

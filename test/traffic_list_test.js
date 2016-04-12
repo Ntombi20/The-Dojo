@@ -2,6 +2,23 @@ var assert = require("assert");
 
 describe("Traffic light dash", function(){
 
+  var expectedLights = [
+    {
+    "color" : "red",
+    "number" : 3
+    },
+    {
+    "color" : "green",
+    "number" : 2
+    }
+  ]
+
+  var expectedAllLights = [
+    {
+    "name" : "traffic lights",
+    "number" : 9
+    }
+  ]
 
   it('should return the totally traffic light', function(done){
 
@@ -10,12 +27,6 @@ describe("Traffic light dash", function(){
 
         var dash = lights.totallyTrafficLight();
 
-        var expectedAllLights = [
-          {
-          "name" : "traffic lights",
-          "number" : 9
-          }
-        ]
           assert.deepEqual(expectedAllLights, dash);
           done();
 
@@ -29,16 +40,6 @@ describe("Traffic light dash", function(){
 
         var dash = lights.traffic();
 
-        var expectedLights = [
-          {
-          "color" : "red",
-          "number" : 3
-          },
-          {
-          "color" : "green",
-          "number" : 2
-          }
-        ]
           assert.deepEqual(expectedLights, dash);
           done();
 
@@ -50,15 +51,9 @@ describe("Traffic light dash", function(){
      var Traffic_light = require("../traffic_light");
      var lights = new Traffic_light('./files/traffic.txt');
 
-         var dash = light.yellow(traffic());
+         var dash = lights.yellow(expectedLights, expectedAllLights);
 
-         var expected = [
-           {
-           "color" : "yellow",
-           "number" : 4
-           }
-         ]
-           assert.equal(expected, dash);
+           assert.equal(4, dash);
            done();
 
    })
