@@ -59,27 +59,15 @@ this.traffic = function(){
 }
 
 
-// now the yellow light
+// now the yellow lightvar numAll = list[0].number
+
 this.yellow = function(redGreen, list){
    var numGreenRed = redGreen[0].number + redGreen[1].number;
    var numAll = list[0].number;
 
    var yellow = numAll - numGreenRed;
-   console.log(yellow);
-   return yellow;
-//
-//   for (var list in numAll) {
-//     for (var redGreen in numGreenRed) {
-//       console.log(numAll[list[0].number]);
-//       //console.log(numGreenRed[redGreen]);
-//
-//     };
-//   };
-//   //   var newNum = note[redGreen];
-//   //
-//   //   console.log(note[redGreen[0].color]);
-//
-}
 
+   return yellow;
+}
 
 };
