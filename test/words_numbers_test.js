@@ -59,7 +59,7 @@ describe("Words and numbers", function(){
       });
 
 
-      it('should return count all numbers in a sentenc', function(done){
+      it('should return count all numbers in a sentence', function(done){
 
         var Words_numbers = require("../words_numbers");
         var count = new Words_numbers('./files/wordsNum.txt');
