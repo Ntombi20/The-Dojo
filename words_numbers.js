@@ -31,15 +31,24 @@ return num;
 // this.shorter = function(){
 // var words_numbers = fs.readFileSync(filePath, 'utf8' );
 //
-//   var string = words_numbers.split(" ");
 //
-//   string.forEach(function(words){
-//     console.log(words);
+//   var string = words_numbers.replace(/\d+/g, '').split(" ");
+//     console.log(string);
 //
-//   })
-//   //I saw 3 bears, and 7 toads in 50 meters from the tallest tree in the park.
+//   var words = [];
+//
+//   string.forEach(function(word){
+//   //  console.log(word);
 //
 //
+//     if (word.length <= 3) {
+//       words.push(word);
+//     }
+//
+//   });
+//
+// return words;
+// //   //I saw 3 bears, and 7 toads in 50 meters from the tallest tree in the park.
 // }
 
 

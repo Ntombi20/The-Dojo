@@ -1,13 +1,11 @@
 var assert = require("assert");
+var Words_numbers = require("../words_numbers");
+var count = new Words_numbers('./files/wordsNum.txt');
 
 describe("Words and numbers", function(){
 
 
     it('should return all the numbers in a sentence', function(done){
-
-      var Words_numbers = require("../words_numbers");
-      var count = new Words_numbers('./files/wordsNum.txt');
-
             var expectedNumber = [
               {
               number: 3
@@ -28,9 +26,6 @@ describe("Words and numbers", function(){
 
       it('should return all words shorter than 3 in a sentence', function(done){
 
-        var Words_numbers = require("../words_numbers");
-        var count = new Words_numbers('./files/wordsNum.txt');
-
               assert.equal(["I", "saw", "and", "in", "the", "in", "the"], count.shorter());
               done();
 
@@ -38,9 +33,6 @@ describe("Words and numbers", function(){
 
 
       it('should return all find all the numbers in a sentence bigger than 15', function(done){
-
-        var Words_numbers = require("../words_numbers");
-        var count = new Words_numbers('./files/wordsNum.txt');
 
               assert.equal(50, count.bigger());
               done();
@@ -50,9 +42,6 @@ describe("Words and numbers", function(){
 
       it('should return count all the words in a sentence', function(done){
 
-        var Words_numbers = require("../words_numbers");
-        var count = new Words_numbers('./files/wordsNum.txt');
-
               assert.equal(51, count.words());
               done();
 
@@ -60,9 +49,6 @@ describe("Words and numbers", function(){
 
 
       it('should return count all numbers in a sentence', function(done){
-
-        var Words_numbers = require("../words_numbers");
-        var count = new Words_numbers('./files/wordsNum.txt');
 
               assert.equal(60, count.countNum());
               done();

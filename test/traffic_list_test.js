@@ -1,4 +1,6 @@
 var assert = require("assert");
+var Traffic_light = require("../traffic_light");
+var lights = new Traffic_light('./files/traffic.txt');
 
 describe("Traffic light dash", function(){
 
@@ -21,10 +23,6 @@ describe("Traffic light dash", function(){
   ]
 
   it('should return the totally traffic light', function(done){
-
-    var Traffic_light = require("../traffic_light");
-    var lights = new Traffic_light('./files/traffic.txt');
-
         var dash = lights.totallyTrafficLight();
 
           assert.deepEqual(expectedAllLights, dash);
@@ -34,10 +32,6 @@ describe("Traffic light dash", function(){
 
 
   it('should return red nd green lights', function(done){
-
-    var Traffic_light = require("../traffic_light");
-    var lights = new Traffic_light('./files/traffic.txt');
-
         var dash = lights.traffic();
 
           assert.deepEqual(expectedLights, dash);
@@ -47,10 +41,6 @@ describe("Traffic light dash", function(){
 
 
    it('should return how many lights were orange?', function(done){
-
-     var Traffic_light = require("../traffic_light");
-     var lights = new Traffic_light('./files/traffic.txt');
-
          var dash = lights.yellow(expectedLights, expectedAllLights);
 
            assert.equal(4, dash);

@@ -58,7 +58,6 @@ this.traffic = function(){
 
 }
 
-
 // now the yellow light
 
 this.yellow = function(redGreen, list){
